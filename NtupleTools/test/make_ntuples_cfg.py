@@ -68,17 +68,17 @@ import PhysicsTools.PatAlgos.tools.helpers as helpers
 process = cms.Process("Ntuples")
 
 # if you want to debug in the future, uncomment this
-#process.ProfilerService = cms.Service (
-#      "ProfilerService",
-#       firstEvent = cms.untracked.int32(2),
-#       lastEvent = cms.untracked.int32(500),
-#       paths = cms.untracked.vstring('schedule') 
-#)
-#
-#process.SimpleMemoryCheck = cms.Service(
-#    "SimpleMemoryCheck",
-#    ignoreTotal = cms.untracked.int32(1)
-#)
+process.ProfilerService = cms.Service (
+      "ProfilerService",
+       firstEvent = cms.untracked.int32(2),
+       lastEvent = cms.untracked.int32(500),
+       paths = cms.untracked.vstring('schedule') 
+)
+
+process.SimpleMemoryCheck = cms.Service(
+    "SimpleMemoryCheck",
+    ignoreTotal = cms.untracked.int32(1)
+)
 
 
 process.options = cms.untracked.PSet(
@@ -161,7 +161,7 @@ options.register(
 )
 options.register(
     'skipMET',
-    0,
+    1,
     TauVarParsing.TauVarParsing.multiplicity.singleton,
     TauVarParsing.TauVarParsing.varType.int,
     "Skip MET corrections and systematics (good way to reduce memory "
@@ -626,13 +626,13 @@ fs_daughter_inputs['taus'] = preTaus(process,
                                      options.use25ns,
                                      fs_daughter_inputs['taus'],
                                      fs_daughter_inputs['vertices'])
+
 for fs in additional_fs:
     additional_fs[fs]['taus'] = preTaus(process,
                                         options.use25ns,
                                         additional_fs[fs]['taus'],
                                         additional_fs[fs]['vertices'],
                                         postfix=fs)
-
 ########################
 ### embed photon IDs ###
 ########################
@@ -691,7 +691,7 @@ if options.passThru:
     preselections = {}
 else:
     preselections = parameters.get('preselection',{})
-
+print "pass here3"
 from FinalStateAnalysis.NtupleTools.object_parameter_selector import setup_selections
 process.preselectionSequence = setup_selections(
     process, 
@@ -702,6 +702,7 @@ process.preselectionSequence = setup_selections(
 process.FSAPreselection = cms.Path(process.preselectionSequence)
 process.schedule.append(process.FSAPreselection)
 
+print "pass here4"
 for fs in additional_fs:
     preSeqName = 'preselectionSequence{0}'.format(fs)
     preSeq = setup_selections(
@@ -718,6 +719,7 @@ for fs in additional_fs:
     process.schedule.append(getattr(process,'FSAPreselection{0}'.format(fs)))
 
 
+print "pass here5"
 
 ###########################################################################
 ### The following is embedding that must be done after object selection ###
@@ -748,6 +750,7 @@ fs_daughter_inputs['taus'] = postTaus(process,options.use25ns,fs_daughter_inputs
 for fs in additional_fs:
     additional_fs[fs]['taus'] = postTaus(process,options.use25ns,additional_fs[fs]['taus'],additional_fs[fs]['jets'],postfix=fs)
 
+print "pass here6"
 #################################
 ### post photon customization ###
 #################################

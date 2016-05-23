@@ -72,11 +72,18 @@ datadefs["DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8"] = {
     'calibrationTarget': 'RunIISpring15DR7',
     'x_sec':  6025.2,
 }
+#datadefs["WJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8"] = {
+#    'analyses': ['4L'],
+#    'datasetpath': '/WJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISpring15MiniAODv2-74X_mcRun2_asymptotic_v2-v1/MINIAODSIM',
+#    'pu': 'Asympt25ns',
+#    'calibrationTarget': 'RunIISpring15DR7',
+#    'x_sec': 61526.7 ,
+#}
 datadefs["WJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8"] = {
     'analyses': ['4L'],
-    'datasetpath': '/WJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISpring15MiniAODv2-74X_mcRun2_asymptotic_v2-v1/MINIAODSIM',
+    'datasetpath': '/WJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISpring16MiniAODv1-PUSpring16_80X_mcRun2_asymptotic_2016_v3-v1/MINIAODSIM',
     'pu': 'Asympt25ns',
-    'calibrationTarget': 'RunIISpring15DR7',
+    'calibrationTarget': 'Moriond2015',
     'x_sec': 61526.7 ,
 }
 
@@ -298,6 +305,14 @@ datadefs['data_SingleMuon_Run2015D_PromptReco-v4_25ns'] = {
    'lumi_mask' : "FinalStateAnalysis/RecoTools/data/masks/Cert_246908-259891_13TeV_PromptReco_Collisions15_25ns_JSON.txt",
    'firstRun' : 258486,
    'lastRun' : 260403,
+   'analyses' : ['HZZ'],
+    'calibrationTarget':'Moriond2015'
+   }
+datadefs['data_SingleMuon_Run2016B_PromptReco-v2_25ns'] = {
+   'datasetpath' : "/SingleMuon/Run2016B-PromptReco-v2/MINIAOD",
+   'lumi_mask' : "FinalStateAnalysis/RecoTools/data/masks/Cert_271036-273450_13TeV_PromptReco_Collisions16_JSON_NoL1T.txt",
+   'firstRun' : 272007,
+   'lastRun' : 273450,
    'analyses' : ['HZZ'],
     'calibrationTarget':'Moriond2015'
    }
