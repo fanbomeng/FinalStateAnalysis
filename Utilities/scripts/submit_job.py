@@ -139,9 +139,9 @@ def getFarmoutCommand(args, dataset_name, full_dataset_name):
         elif args.silver:
             filename = 'Cert_246908-260627_13TeV_PromptReco_Collisions15_25ns_JSON_Silver_v2.txt' # 2.63/fb
         else:
-            filename = 'Cert_246908-260627_13TeV_PromptReco_Collisions15_25ns_JSON_v2.txt' # 2.26/fb
+            filename = 'Cert_271036-273450_13TeV_PromptReco_Collisions16_JSON_NoL1T.txt' # 2.26/fb
         if args.bunchSpacing==50: filename = 'Cert_246908-255031_13TeV_PromptReco_Collisions15_50ns_JSON_v2.txt' # 71.52/pb
-        lumi_mask_path = os.path.join('/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions15/13TeV',filename)
+        lumi_mask_path = os.path.join('/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions16/13TeV/',filename)
         if args.lumimaskjson: 
             assert not (args.silver or args.goldenv2), "ERROR: Multiple lumimask jsons specified"
             lumi_mask_path = args.lumimaskjson

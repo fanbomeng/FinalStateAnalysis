@@ -46,7 +46,7 @@ id = PSet(
 #    objectAgainstElectronMVA5category = '{object}.tauID("againstElectronMVA5category")',
 #    objectAgainstElectronMVA5raw      = '{object}.tauID("againstElectronMVA5raw")',
     objectAgainstElectronMVA6Raw      = '{object}.tauID("againstElectronMVA6Raw")',
-
+  #  objectAgainstElectronMVA6Raw='{object}.tauID("againstElectronMVA6raw")' 
     # Against Muon
     objectAgainstMuonLoose3 = '{object}.tauID("againstMuonLoose3")',
     objectAgainstMuonTight3 = '{object}.tauID("againstMuonTight3")',
