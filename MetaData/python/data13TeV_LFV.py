@@ -104,7 +104,7 @@ datadefs["WJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8"] = {
     'analyses': ['4L'],
     'datasetpath': '/WJetsToLNu_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISpring16MiniAODv1-PUSpring16_80X_mcRun2_asymptotic_2016_v3-v1/MINIAODSIM',
     'pu': 'Asympt25ns',
-    'calibrationTarget': 'Moriond2015',
+    'calibrationTarget': 'RunIISpring15DR7',
     'x_sec': 61526.7 ,
 }
 
