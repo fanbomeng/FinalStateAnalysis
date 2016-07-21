@@ -40,5 +40,10 @@ if __name__ == "__main__":
         sys.stderr.write("Using 13 TeV data definitions\n")
         import FinalStateAnalysis.MetaData.data13TeV_LFV as datadefs
 
+        #print "*****************11111111111111111111111******************"
+       # print args.sample
+       # print datadefs.datadefs[args.sample]['x_sec']
+       # print picobarns
     sample_xsec = datadefs.datadefs[args.sample]['x_sec']/picobarns
     print args.nevts/sample_xsec
+#    print args.nevts
