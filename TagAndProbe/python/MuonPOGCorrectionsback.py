@@ -66,8 +66,7 @@ _DATA_FILES = {
         'Iso'    : os.path.join(_DATA_DIR, 'MuonISO_Z_2016runB_2p6fb.root'),
         'Trigger': os.path.join(_DATA_DIR, 'SingleMuonTrigger_Z_RunCD_Reco76X_Feb15.root'),
         'Tracking': os.path.join(_DATA_DIR, 'general_tracks_and_early_general_tracks_corr_ratio.root'),
-        'TrggerIso22': os.path.join(_DATA_DIR, 'Muon_IsoMu22_eff_Spring16.root'), #from HTATAU
-        'IsoMu22_OR_IsoTkMu22': os.path.join(_DATA_DIR, 'SingleMuonTrigger_Z_RunBCD_prompt80X_7p65.root')  #from Muon POG
+        'TrggerIso22': os.path.join(_DATA_DIR, 'Muon_IsoMu22_eff_Spring16.root')
         
     }
 }
@@ -172,11 +171,6 @@ def make_muon_pog_PFTight_2016B():
 #        "MC_NUM_MediumID_DEN_genTracks_PAR_pt_spliteta_bin1/pt_abseta_ratio"
 #    )
 
-def make_muon_pog_TriggerEfficency_2016B():
-    return MuonPOGCorrection2D(
-        _DATA_FILES['2016B']['IsoMu22_OR_IsoTkMu22'],
-        "IsoMu22_OR_IsoTkMu22_PtEtaBins_Run274094_to_275125/efficienciesDATA/pt_abseta_DATA"
-    )
 def make_muon_pog_PFLoose_2016B():
     return MuonPOGCorrection2D(
         _DATA_FILES['2016B']['PFID'],
@@ -188,7 +182,7 @@ def make_muon_pog_Tracking_2016B():
         "mutrksfptg10"
     )
 
-def make_muon_HTauTau_TriggerIso22_2016B():
+def make_muon_pog_TriggerIso22_2016B():
     return MuonPOGTriggerCorrection(
         _DATA_FILES['2016B']['TrggerIso22']
     )

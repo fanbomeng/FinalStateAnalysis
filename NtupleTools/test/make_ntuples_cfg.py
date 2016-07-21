@@ -160,7 +160,7 @@ options.register(
 )
 options.register(
     'skipMET',
-    0,
+    1,
     TauVarParsing.TauVarParsing.multiplicity.singleton,
     TauVarParsing.TauVarParsing.varType.int,
     "Skip MET corrections and systematics (good way to reduce memory "
@@ -260,7 +260,8 @@ process.load('Configuration.StandardSequences.Services_cff')
 
 # Need the global tag for geometry etc.
 envvar = 'mcgt' if options.isMC else 'datagt'
-GT = {'mcgt': 'auto:run2_mc', 'datagt': 'auto:run2_data'}
+#GT = {'mcgt': 'auto:run2_mc', 'datagt': 'auto:run2_data'}
+GT = {'mcgt': '80X_mcRun2_asymptotic_2016_miniAODv2_v1', 'datagt': '80X_dataRun2_Prompt_ICHEP16JEC_v0'}
 if options.runNewMVAMET :
     GT = {'mcgt': '76X_mcRun2_asymptotic_RunIIFall15DR76_v1', 'datagt': '76X_dataRun2_16Dec2015_v0'}
 
